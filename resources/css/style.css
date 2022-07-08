@@ -1,0 +1,157 @@
+body {
+    background-color: rgb(240, 245, 255);
+    font-family: 'Pretendard', 'sans-serif';
+    font-weight: 300;
+}
+
+
+body>.start-button {
+    top: 50%;
+    left: 50%;
+    background-color: rgb(50, 150, 250);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.75rem 0.0625rem rgba(0, 0, 0, 33%);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    /* letter-spacing: 자간 */
+    opacity: 0;
+    padding: 1rem 1.5rem;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    /* 1rem = 16px */
+}
+
+body>.start-button.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+body>.start-button:hover {
+    filter: brightness(105%);
+}
+
+body>.start-button:active {
+    filter: brightness(95%);
+}
+
+
+body>.start-button .visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+body>.start-button:hover {
+    filter: brightness(105%);
+}
+
+body>.start-button:active {
+    filter: brightness(95%);
+}
+
+
+body>.ground {
+    left: 0;
+    left: 0;
+    box-sizing: border-box;    
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    pointer-events: none;
+    padding: 2rem 0;
+    position: fixed;
+    user-select: none;
+}
+
+body>.ground.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+body>.ground>.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1;
+    /* flex-grow : 1 flex-shrink: 1 flex-basis: auto */
+}
+
+body>.ground>.top>.number-container {
+    display: grid;
+    gap: 0.25rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+body>.ground>.top>.number-container>.number {
+    width: calc((100vh - 20rem) / 6);
+    height: calc((100vh - 20rem) / 6);
+    background-color: #fff;
+    border: 0.125rem solid rgb(210, 215, 225);
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;   
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+body>.ground>.top>.number-container>.number[data-status=correct] {
+    background-color: rgb(169, 223, 191);
+    border: 0.125rem solid rgb(82, 190, 128);
+    color: rgb(39, 174, 96);
+}
+
+body>.ground>.top>.number-container>.number[data-status=incorrect] {
+    background-color: rgb(204, 209, 209);
+    border: 0.125rem solid rgb(39, 190, 141);
+    color: rgb(127, 140, 141);
+}
+
+body>.ground>.top>.number-container>.number[data-status=contain] {
+    background-color: rgb(249, 231, 159);
+    border: 0.125rem solid rgb(241, 172, 141);
+    color: rgb(241, 196, 15);
+}
+
+body>.ground>.bottom {
+    height: 15rem;
+    align-items: center;
+    display: flex;
+    justify-content: row;
+    justify-content: center;
+}
+
+body>.ground>.bottom>.key-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body>.ground>.bottom>.key-container>.row {
+    display: grid;
+    gap: 0.25rem;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+}
+
+body>.ground>.bottom>.key-container>.row+.row {
+    margin-top: 0.25rem;
+}
+
+body>.ground>.bottom>.key-container>.row>.key {
+    background-color: rgb(220, 225, 235);
+    padding: 1.25rem 1rem;
+    border-radius: 0.5rem;
+    user-select: none;
+    cursor: pointer;
+}
