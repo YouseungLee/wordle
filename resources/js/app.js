@@ -61,7 +61,7 @@ document.querySelectorAll('[data-key]').forEach(x => {
                         break
                     }
                 }                
-                if (numberIndex >= 29 && isWin <= 5) {
+                if (numberIndex >= 29 && isWin < 5) {
                     alert("you Lose")
                     break
                 }
